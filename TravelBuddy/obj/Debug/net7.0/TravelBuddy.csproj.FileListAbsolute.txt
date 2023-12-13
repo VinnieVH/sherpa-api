@@ -31,3 +31,7 @@
 /Users/vincent/Development/TravelBuddy/travel-buddy-api/TravelBuddy/obj/Debug/net7.0/TravelBuddy.pdb
 /Users/vincent/Development/TravelBuddy/travel-buddy-api/TravelBuddy/obj/Debug/net7.0/TravelBuddy.genruntimeconfig.cache
 /Users/vincent/Development/TravelBuddy/travel-buddy-api/TravelBuddy/obj/Debug/net7.0/ref/TravelBuddy.dll
+/Users/vincent/Development/TravelBuddy/travel-buddy-api/TravelBuddy/bin/Debug/net7.0/MediatR.dll
+/Users/vincent/Development/TravelBuddy/travel-buddy-api/TravelBuddy/bin/Debug/net7.0/MediatR.Contracts.dll
+/Users/vincent/Development/TravelBuddy/travel-buddy-api/TravelBuddy/bin/Debug/net7.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
+/Users/vincent/Development/TravelBuddy/travel-buddy-api/TravelBuddy/bin/Debug/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll

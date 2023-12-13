@@ -1,4 +1,7 @@
+using System.ComponentModel.DataAnnotations;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TravelBuddy.Queries;
 
 namespace TravelBuddy.Controllers;
 
@@ -6,27 +9,28 @@ namespace TravelBuddy.Controllers;
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
     private readonly ILogger<WeatherForecastController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    private readonly ISender _mediator;
+
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, ISender mediator)
     {
         _logger = logger;
+        _mediator = mediator;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+        var weatherForecasts = await _mediator.Send(new GetAllWeatherForecastsQuery());
+        return Ok(weatherForecasts);
+    }
+    
+    [HttpGet]
+    [Route("{id:int}")]
+    public async Task<IActionResult> GetById([FromRoute] int id)
+    {
+        var result = await _mediator.Send(new GetWeatherForecastByIdQuery(id));
+        return result != null ? Ok(result) : NotFound();
     }
 }
