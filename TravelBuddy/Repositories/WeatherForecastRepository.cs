@@ -1,6 +1,6 @@
 namespace TravelBuddy.Repositories;
 
-public class WeatherForecastRepository
+public class WeatherForecastRepository : IWeatherForecastRepository
 {
     private static readonly string[] Summaries = new[]
     {
@@ -9,7 +9,7 @@ public class WeatherForecastRepository
     
     private readonly IEnumerable<WeatherForecast> _weatherForecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
     {
-        Id = index,
+        Id = Guid.NewGuid(),
         Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
         TemperatureC = Random.Shared.Next(-20, 55),
         Summary = Summaries[Random.Shared.Next(Summaries.Length)]
@@ -20,10 +20,8 @@ public class WeatherForecastRepository
         return Task.FromResult(_weatherForecasts);
     }
 
-    public WeatherForecast? GetById(int id)
+    public WeatherForecast? GetById(Guid id)
     {
         return _weatherForecasts.FirstOrDefault(x => x.Id == id);
     }
-    
-    
 }

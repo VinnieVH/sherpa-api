@@ -4,12 +4,11 @@ using TravelBuddy.Repositories;
 
 namespace TravelBuddy.Handlers;
 
-public class GetWeatherForecastByIdQueryHandler : IRequestHandler<GetWeatherForecastByIdQuery, WeatherForecast?>
+public class GetWeatherForecastByIdQueryHandler(IWeatherForecastRepository weatherForecastRepository)
+    : IRequestHandler<GetWeatherForecastByIdQuery, WeatherForecast?>
 {
-    private readonly WeatherForecastRepository _weatherForecastRepository = new();
-    
     public Task<WeatherForecast?> Handle(GetWeatherForecastByIdQuery request, CancellationToken cancellationToken)
     {
-        return Task.FromResult(_weatherForecastRepository.GetById(request.Id));
+        return Task.FromResult(weatherForecastRepository.GetById(request.Id));
     }
 }

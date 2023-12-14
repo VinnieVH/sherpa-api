@@ -9,7 +9,7 @@ public partial class SlugifyParameterTransformer : IOutboundParameterTransformer
     
     public string? TransformOutbound(object? value)
     {
-        if (value == null) { return null; }
+        if (value == null) return null; 
         var str = value.ToString();
         return string.IsNullOrEmpty(str) ? null : MyRegex().Replace(str, "$1-$2").ToLower();
     }
