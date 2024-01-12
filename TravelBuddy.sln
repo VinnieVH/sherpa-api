@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelBuddy", "TravelBuddy\TravelBuddy.csproj", "{4D561126-B5CE-41DE-BCA3-7EABC5087746}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelBuddy.Api", "TravelBuddy.Api\TravelBuddy.Api.csproj", "{4D561126-B5CE-41DE-BCA3-7EABC5087746}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
