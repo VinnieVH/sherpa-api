@@ -1,4 +1,4 @@
-namespace TravelBuddy.Repositories;
+namespace Sherpa.Repositories;
 
 public interface IWeatherForecastRepository
 {

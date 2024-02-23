@@ -1,9 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TravelBuddy.Queries;
+using Sherpa.Queries;
 
-namespace TravelBuddy.Controllers;
+namespace Sherpa.Controllers;
 
 [Authorize]
 [ApiController]

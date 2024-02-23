@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace TravelBuddy.Queries;
+namespace Sherpa.Queries;
 
 public class GetAllWeatherForecastsQuery : IRequest<IEnumerable<WeatherForecast>>
 {

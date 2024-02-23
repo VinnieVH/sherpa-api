@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace TravelBuddy.Queries;
+namespace Sherpa.Queries;
 
 public class GetWeatherForecastByIdQuery(Guid id) : IRequest<WeatherForecast?>
 {

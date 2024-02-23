@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace TravelBuddy;
+namespace Sherpa;
 
 public partial class SlugifyParameterTransformer : IOutboundParameterTransformer
 {

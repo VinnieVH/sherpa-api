@@ -1,12 +1,11 @@
 using System.Reflection;
-using System.Runtime.Intrinsics.X86;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
-using TravelBuddy;
-using TravelBuddy.Repositories;
+using Sherpa.Repositories;
+using SlugifyParameterTransformer = Sherpa.SlugifyParameterTransformer;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;

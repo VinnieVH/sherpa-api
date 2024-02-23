@@ -1,8 +1,8 @@
 using MediatR;
-using TravelBuddy.Queries;
-using TravelBuddy.Repositories;
+using Sherpa.Queries;
+using Sherpa.Repositories;
 
-namespace TravelBuddy.Handlers;
+namespace Sherpa.Handlers;
 
 public class GetWeatherForecastByIdQueryHandler(IWeatherForecastRepository _weatherForecastRepository)
     : IRequestHandler<GetWeatherForecastByIdQuery, WeatherForecast?>

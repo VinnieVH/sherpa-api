@@ -1,4 +1,4 @@
-namespace TravelBuddy;
+namespace Sherpa;
 
 public class WeatherForecast
 {

@@ -1,8 +1,8 @@
 using MediatR;
-using TravelBuddy.Queries;
-using TravelBuddy.Repositories;
+using Sherpa.Queries;
+using Sherpa.Repositories;
 
-namespace TravelBuddy.Handlers;
+namespace Sherpa.Handlers;
 
 internal class GetAllWeatherForecastsQueryHandler(IWeatherForecastRepository weatherForecastRepository)
     : IRequestHandler<GetAllWeatherForecastsQuery, IEnumerable<WeatherForecast>>
